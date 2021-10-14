@@ -36,13 +36,13 @@ function showStudentsFavoriteLessons() {
   function checkStudentFavoriteLessons() {
 	  for (var i = 0; i < studentsList.length; i++) {
       var favoriteLessons = []
-      favoriteLessons = lessons.slice( getRandomInt(0, 6), 6 )
+      favoriteLessons = lessons.slice( getRandomInt(0, lessons.length), lessons.length )
       function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor( Math.random() * (max - min + 1) ) + min;
       }
-      if (favoriteLessons.length != 0) {
+      if (favoriteLessons.length > 0) {
         console.log(`${studentsList[i]}: ${favoriteLessons.join(', ')}`)
       } else {
         console.log(`${studentsList[i]}: У этого студента нет любимых предметов`)
